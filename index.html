@@ -28,43 +28,50 @@
       .wind {
         border-width: 5px;
         border-color: lightblue;
-        margin-top: 15%;
-        margin-left: 2%;
-        font-size: 50px;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-size: 60px;
         font-family: "Cormorant Infant", serif;
         font-family: "Poppins", sans-serif;
       }
 
       .humidity {
-        margin-top: 15%;
-        margin-left: 2%;
-        font-size: 50px;
+        border-width: 5px;
+        border-color: lightblue;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-size: 60px;
         font-family: "Cormorant Infant", serif;
         font-family: "Poppins", sans-serif;
       }
 
       .temp {
-        margin-top: 15%;
-        margin-left: 2%;
-        font-size: 50px;
+        border-width: 5px;
+        border-color: lightblue;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-size: 60px;
         font-family: "Cormorant Infant", serif;
         font-family: "Poppins", sans-serif;
       }
 
       .press {
-        margin-top: 15%;
-        margin-left: 2%;
-        font-size: 50px;
+        border-width: 5px;
+        border-color: lightblue;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-size: 60px;
         font-family: "Cormorant Infant", serif;
         font-family: "Poppins", sans-serif;
+   
       }
 
       #image {
         position: absolute;
-        top: 10px;
+        top: 120px;
 
-        margin-left: 45%;
-        width: 500px;
+        margin-left: 25%;
+        width: 400px;
       }
 
       #header {
@@ -205,26 +212,31 @@
 
             console.log(response.main.temp);
 
-            if (70.00 < parseFloat(response.main.temp) < 120.00) {
-              document.body.style.background = "#E67F7F";
-              //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
-              //background-color: #f7b42c;
-              //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
-            }
+            if(document.getElementById("option5").value === "1" || document.getElementById("option5").value === "2" || document.getElementById("option5").value === "3" || document.getElementById("option5").value === "4"  ){
 
-            if (40 < response.main.temp < 69) {
-              document.body.style.background = "#FFFFE0";
-              //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
-              //background-color: #f7b42c;
-              //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
-            }
+                if (70.00 < parseFloat(response.main.temp) && parseFloat(response.main.temp) < 120.00) {
+                      document.body.style.background = "#E67F7F";
+                      //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
+                      //background-color: #f7b42c;
+                      //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+                    }
 
-            if (0 < response.main.temp < 39) {
-              document.body.style.background = "#1D7699";
-              //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
-              //background-color: #f7b42c;
-              //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
-            }
+                    if (40 < parseFloat(response.main.temp) && parseFloat(response.main.temp) < 69) {
+                      document.body.style.background = "#FFFFE0";
+                      //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
+                      //background-color: #f7b42c;
+                      //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+                    }
+
+                    if (0 < parseFloat(response.main.temp) && parseFloat(response.main.temp) < 39) {
+                      document.body.style.background = "#1D7699";
+                      //document.body.style.backgroundImage='linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);'
+                      //background-color: #f7b42c;
+                      //background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+                    }
+                  }
+
+
 
             // $(".city").html("<h1>" + response.name + " Weather Details</h1>");
             //$(".wind").text("Wind Speed: " + response.wind.speed);
@@ -232,6 +244,8 @@
             //$(".temp").text("Temperature (F) " + response.main.temp);
           });
         }
+
+
 
         //}
       </script>
